@@ -1,0 +1,9 @@
+Lambda describe all buckets within an account
+Then goes through each bucket
+Get a list of all objects
+Check every single object for ACL
+Check if ACL is public
+
+The output should be a list of all objects with public ACL
+  
+Script should be able to be able to use different account (low priority).
