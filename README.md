@@ -7,4 +7,4 @@
                                               |___/                       
 ```
 
-# S3 Bucket ACL Scanner
+# s3-acl-scan
