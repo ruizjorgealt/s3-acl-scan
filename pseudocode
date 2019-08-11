@@ -1,7 +1,7 @@
 for each aws account
 	get region
 	for each region
-		get all bucket
+		get s3 bucket
 		for each bucket
 			get object
 			for each object
