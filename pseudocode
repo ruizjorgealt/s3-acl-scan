@@ -1,4 +1,4 @@
-for each aws accoutn
+for each aws account
 	get region
 	for each region
 		get all bucket
