@@ -7,4 +7,4 @@
                                               |___/                       
 ```
 
-# s3-acl-scan
+# S3 Bucket Object Scanner
