@@ -1,0 +1,10 @@
+for each aws accoutn
+	get region
+	for each region
+		get all bucket
+		for each bucket
+			get object
+			for each object
+				get access control list (acl)
+				if acl is public
+					write to cvs
