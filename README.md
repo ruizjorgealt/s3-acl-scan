@@ -25,7 +25,7 @@ def main():
     for i in range(0,len(profile)):
         session=boto3.session.Session(profile_name=profile[i])
 ```
-You can scan multiple AWS accounts by simply extending the list and adding additional profiles to the list.
+You can **scan multiple AWS accounts** by simply extending the list and adding additional profiles to the list.
 
 ```
 def main():
