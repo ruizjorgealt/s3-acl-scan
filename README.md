@@ -24,7 +24,7 @@ Then simply run the python script in your terminal:
 
 Once the script performs a complete scan of all of your objects, it will generate a CVS file with objects that are public and accessible to the internet.
 
-![cvs with public objects](https://jorgearuiz.net/wp-content/uploads/2019/08/Screen-Shot-2019-08-11-at-11.25.03-PM.png)
+![cvs with public objects](https://jorgearuiz.net/wp-content/uploads/2019/08/Screen-Shot-2019-08-12-at-12.39.49-AM.png)
 
 ### Compatibility
 
