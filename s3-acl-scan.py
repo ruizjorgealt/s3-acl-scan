@@ -26,13 +26,13 @@ all_buckets =s3.list_buckets()
 for bucket in all_buckets['Buckets']:
 
     # -- Get Individual Bucket Name -- #
-    a_bucket = bucket['Name']
+    tmp_bucket = bucket['Name']
 
     # -- Get Bucket Region -- #
     region = s3.get_bucket_location(
-        Bucket=a_bucket
+        Bucket=tmp_bucket
     )
-    a_region = region['LocationConstraint']    
+    tmp_region = region['LocationConstraint']    
 
 #-----------------------------#
 # Check Objects in S3 Buckets #
@@ -47,14 +47,14 @@ for bucket in all_buckets['Buckets']:
     for object in all_objects['Contents']:
 
         # -- Get object name and storage class -- #
-        a_obj = object['Key']
-        a_strclass = object['StorageClass']
+        tmp_object = object['Key']
+        tmp_strclass = object['StorageClass']
         # a_obj = a_obj.encode('ascii', 'ignore').decode('ascii')
 
         # Get ACL of individual objects
         object_acl = s3.get_object_acl(
-            Bucket=a_bucket,
-            Key=a_obj,
+            Bucket=tmp_bucket,
+            Key=tmp_object,
         )
 
 #-----------------------------#
@@ -65,8 +65,12 @@ for bucket in all_buckets['Buckets']:
         for acl in object_acl['Grants']:
             try:
                 if acl['Grantee']['URI'] == 'http://acs.amazonaws.com/groups/global/AllUsers':
+                    a_region = tmp_region
+                    a_bucket = tmp_bucket
+                    a_object = tmp_object
                     a_uri = acl['Grantee']['URI']
                     a_permission = acl['Permission']
+                    a_strclass = tmp_strclass
                     row = a_region + ',' + a_bucket + ',' + a_object + ',' + a_uri + ',' + a_permission + ',' + a_strclass + '\n'
                     csv.write(row)
             except:
