@@ -15,7 +15,7 @@ def main():
     csv.write(columnTitleRow)
 
     # -- AWS Profiles -- #
-    profile = ["profile1", "profile2"]
+    profile = ["profile1"]
     for i in range(0,len(profile)):
         session=boto3.session.Session(profile_name=profile[i])
         
