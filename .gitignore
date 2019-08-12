@@ -12,3 +12,4 @@
 *htdocs/
 .env
 test.py
+testscan.log
