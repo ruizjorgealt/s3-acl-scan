@@ -16,7 +16,7 @@ Python script that scans all of your S3 objects for public access. Public object
 - WRITE_ACP
 
 ## How To Use
-In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system or ensure that you are running the script in an EC2 environment with the proper AMI role.
+In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system.
 
 First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials**
 ```
