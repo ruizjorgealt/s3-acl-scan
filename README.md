@@ -33,3 +33,7 @@ Once the script performs a complete scan of all of your objects, it will generat
 
 ### Backlog
 - [ ] Scan objects in multiple AWS accounts
+
+#### References
+
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html
