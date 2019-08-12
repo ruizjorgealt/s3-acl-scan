@@ -9,7 +9,7 @@ logging.basicConfig(filename=LOG_FILENAME,level=logging.INFO)
 # -- S3 Object Instantiation (OOP) -- #
 s3 = boto3.client('s3')
 
-# -- CSV Object Instantiation and Preparation -- #
+# -- CSV Object Instantiation (OOP) and Preparation -- #
 csv_dir = 'public_objects.csv'
 csv = open(csv_dir, "w")
 columnTitleRow = "region, bucket, object, uri, permissions, storageClass\n"
