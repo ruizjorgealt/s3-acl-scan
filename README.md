@@ -18,18 +18,18 @@ Python script that scans all of your S3 objects for public access. Public object
 ## How To Use
 In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system.
 
-First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials**
+First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials** by simply editing the profile list to match your profile name.
 ```
 def main():
-    profile = ["myProfileName"]
+    profile = ["myProfileName"] #<------ THIS IS THE LIST!
     for i in range(0,len(profile)):
         session=boto3.session.Session(profile_name=profile[i])
 ```
-You scan multiple AWS accounts, simply extend the list and add additional profiles
+You can scan multiple AWS accounts by simply extending the list and adding additional profiles to the list.
 
 ```
 def main():
-    profile = ["myProfileName", "dev", "production"]
+    profile = ["myProfileName", "dev", "production"] #<------ THIS IS THE LIST!
     for i in range(0,len(profile)):
         session=boto3.session.Session(profile_name=profile[i])
 ```
