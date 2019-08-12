@@ -9,14 +9,22 @@
 ```
 
 # s3-acl-scan
-Python script that scans all of your S3 objects for public access. Public access are those objects who have been given 
+Python script that scans all of your S3 objects for public access. Public objects are objects that are available to the **All Users group** represented by the uri http://acs.amazonaws.com/groups/global/AllUsers. The script will perform a complete scan of all your objects and identify which objects has have the grantee of http://acs.amazonaws.com/groups/global/AllUsers with the following permissions:
+
+- READ
+- READ_ACP
+- READ_ACP
 
 ## How to use
 In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system or ensure that you are running the script in an EC2 environment with the proper AMI role.
 
-Then you can simply run the python in your CLI in the following manner:
+Then simply run the python script in your terminal:
 
 ` $ python3 s3-acl-scan.py `
+
+Once the script performs a complete scan of all of your objects, it will generate a CVS file with objects that are public and accessible to the internet.
+
+![](https://jorgearuiz.net/wp-content/uploads/2019/08/Screen-Shot-2019-08-11-at-11.25.03-PM.png)
 
 ### Compatibility
 Python v3.6
