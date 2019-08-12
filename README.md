@@ -23,7 +23,7 @@ First you have to provide the name of your aws profile as configured in **.aws/c
 def main():
     profile = ["myProfileName"]
     for i in range(0,len(profile)):
-        session=boto3.session.Session(profile_name=profile.pop(i))
+        session=boto3.session.Session(profile_name=profile[i])
 ```
 You scan multiple AWS accounts, simply extend the list and add additional profiles
 
@@ -31,7 +31,7 @@ You scan multiple AWS accounts, simply extend the list and add additional profil
 def main():
     profile = ["myProfileName", "dev", "production"]
     for i in range(0,len(profile)):
-        session=boto3.session.Session(profile_name=profile.pop(i))
+        session=boto3.session.Session(profile_name=profile[i])
 ```
 
 Then simply run the python script in your terminal:
