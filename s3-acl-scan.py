@@ -7,9 +7,6 @@ LOG_FILENAME = 'scan.log'
 logging.basicConfig(filename=LOG_FILENAME,level=logging.INFO)
 
 def main():
-    profile = ["python"]
-    for i in range(0,len(profile)):
-        session=boto3.session.Session(profile_name=profile.pop(i))
 
     # -- CSV Object Instantiation (OOP) and Preparation -- #
     csv_dir = 'public_objects.csv'
@@ -17,8 +14,13 @@ def main():
     columnTitleRow = "accountID, region, bucket, object, uri, permissions, storageClass\n"
     csv.write(columnTitleRow)
 
-    # -- Call Scanner Function -- #
-    scanner(session, csv)
+    # -- AWS Profiles -- #
+    profile = ["python", "s3user"]
+    for i in range(0,len(profile)):
+        session=boto3.session.Session(profile_name=profile[i])
+        
+        # -- Call Scanner Function -- #
+        scanner(session, csv)
 
 def scanner(session, csv):
     # -- S3 Object Instantiation (OOP) -- #
