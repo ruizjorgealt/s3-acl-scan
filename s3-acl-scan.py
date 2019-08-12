@@ -6,16 +6,25 @@ import csv
 LOG_FILENAME = 'scan.log'
 logging.basicConfig(filename=LOG_FILENAME,level=logging.INFO)
 
-
 def main():
-    # -- S3 Object Instantiation (OOP) -- #
-    s3 = boto3.client('s3')
+    profile = ["python"]
+    for i in range(0,len(profile)):
+        session=boto3.session.Session(profile_name=profile.pop(i))
 
     # -- CSV Object Instantiation (OOP) and Preparation -- #
     csv_dir = 'public_objects.csv'
     csv = open(csv_dir, "w")
-    columnTitleRow = "region, bucket, object, uri, permissions, storageClass\n"
+    columnTitleRow = "accountID, region, bucket, object, uri, permissions, storageClass\n"
     csv.write(columnTitleRow)
+
+    # -- Call Scanner Function -- #
+    scanner(session, csv)
+
+def scanner(session, csv):
+    # -- S3 Object Instantiation (OOP) -- #
+    s3 = session.client('s3')
+    sts = session.client("sts")
+    tmp_acctID = sts.get_caller_identity().get('Account')
 
     #----------------#
     # Get S3 Buckets #
@@ -67,13 +76,14 @@ def main():
             for acl in object_acl['Grants']:
                 try:
                     if acl['Grantee']['URI'] == 'http://acs.amazonaws.com/groups/global/AllUsers':
+                        a_acctid = tmp_acctID
                         a_region = tmp_region
                         a_bucket = tmp_bucket
                         a_object = tmp_object
                         a_uri = acl['Grantee']['URI']
                         a_permission = acl['Permission']
                         a_strclass = tmp_strclass
-                        row = a_region + ',' + a_bucket + ',' + a_object + ',' + a_uri + ',' + a_permission + ',' + a_strclass + '\n'
+                        row = a_acctid + ',' + a_region + ',' + a_bucket + ',' + a_object + ',' + a_uri + ',' + a_permission + ',' + a_strclass + '\n'
                         csv.write(row)
                 except:
                     pass
