@@ -18,6 +18,22 @@ Python script that scans all of your S3 objects for public access. Public object
 ## How To Use
 In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system or ensure that you are running the script in an EC2 environment with the proper AMI role.
 
+First you have to provide the name of your aws profile as configured in .aws/config and .aws/credentials
+```
+def main():
+    profile = ["myProfileName"]
+    for i in range(0,len(profile)):
+        session=boto3.session.Session(profile_name=profile.pop(i))
+```
+You scan multiple AWS accounts, simply extend the list and add additional profiles
+
+```
+def main():
+    profile = ["myProfileName", "dev", "production"]
+    for i in range(0,len(profile)):
+        session=boto3.session.Session(profile_name=profile.pop(i))
+```
+
 Then simply run the python script in your terminal:
 
 ` $ python3 s3-acl-scan.py `
