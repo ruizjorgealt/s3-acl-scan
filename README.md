@@ -48,7 +48,7 @@ Once the script performs a complete scan of all of your objects, it will generat
 -Boto 3
 
 ### Backlog
-- [ ] Scan objects in multiple AWS accounts
+- [x] Scan objects in multiple AWS account profiles
 
 #### References
 
