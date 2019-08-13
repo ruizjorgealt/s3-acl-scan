@@ -39,7 +39,7 @@ aws_secret_access_key = EXAMPLE_SECRET_ACCESS_KEY
 aws_access_key_id = EXAMPLE_ACCESS_KEY_ID
 aws_secret_access_key = EXAMPLE_SECRET_ACCESS_KEY
 ```
-
+Set up script to be used with a **single** AWS profile.
 ```
 # -- AWS Profiles -- #
     profile = ["profile1"] #<----- List with a single profile
