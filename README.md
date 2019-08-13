@@ -15,6 +15,8 @@ Python script that scans all of your S3 objects for public access. Public object
 - READ_ACP
 - WRITE_ACP
 
+For more information on the acs.amazonaws.com/groups/global/AllUsers access group [CLICK HERE.](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html)
+
 ## How To Use
 In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system.
 
