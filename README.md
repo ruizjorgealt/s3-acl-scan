@@ -22,18 +22,18 @@ In order to properly run this script, ensure that you have setup your AWS progra
 
 First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials** by simply editing the profile list to match your profile name.
 ```
-def main():
-    profile = ["myProfileName"] #<------ THIS IS THE LIST!
-    for i in range(0,len(profile)):
-        session=boto3.session.Session(profile_name=profile[i])
+# -- AWS Profiles -- #
+    profile = ["profile1"] #<----- List with a single profile
+    for p in profile:
+        session=boto3.session.Session(profile_name=p)
 ```
 You can **scan multiple AWS accounts** by simply extending the list and adding additional profiles to the list.
 
 ```
-def main():
-    profile = ["myProfileName", "dev", "production"] #<------ THIS IS THE LIST!
-    for i in range(0,len(profile)):
-        session=boto3.session.Session(profile_name=profile[i])
+# -- AWS Profiles -- #
+    profile = ["profile1", "profile2", "profile3"] #<----- List with multiple profiles
+    for p in profile:
+        session=boto3.session.Session(profile_name=p)
 ```
 
 Then simply run the python script in your terminal:
