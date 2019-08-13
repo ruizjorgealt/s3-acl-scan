@@ -32,12 +32,12 @@ region = us-west-2
 **.aws/credentials** example:
 ```
 [profile1]
-aws_access_key_id = ACCESS-KEY
-aws_secret_access_key = SECRET-KEY
+aws_access_key_id = EXAMPLE_ACCESS_KEY_ID
+aws_secret_access_key = EXAMPLE_SECRET_ACCESS_KEY
 
 [profile2]
-aws_access_key_id = ACCESS-KEY
-aws_secret_access_key = SECRET-KEY
+aws_access_key_id = EXAMPLE_ACCESS_KEY_ID
+aws_secret_access_key = EXAMPLE_SECRET_ACCESS_KEY
 ```
 
 ```
