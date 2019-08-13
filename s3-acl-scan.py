@@ -16,8 +16,8 @@ def main():
 
     # -- AWS Profiles -- #
     profile = ["profile1"]
-    for i in range(0,len(profile)):
-        session=boto3.session.Session(profile_name=profile[i])
+    for p in profile:
+        session=boto3.session.Session(profile_name=p)
         
         # -- Call Scanner Function -- #
         scanner(session, csv)
