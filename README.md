@@ -21,6 +21,25 @@ For more information on the **acs.amazonaws.com/groups/global/AllUsers** access 
 In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system.
 
 First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials** by simply editing the profile list to match your profile name.
+
+**.aws/config** example:
+```
+[profile profile1]
+region = us-west-2
+[profile profile2]
+region = us-west-2
+```
+**.aws/credentials** example:
+```
+[profile1]
+aws_access_key_id = ACCESS-KEY
+aws_secret_access_key = SECRET-KEY
+
+[profile2]
+aws_access_key_id = ACCESS-KEY
+aws_secret_access_key = SECRET-KEY
+```
+
 ```
 # -- AWS Profiles -- #
     profile = ["profile1"] #<----- List with a single profile
