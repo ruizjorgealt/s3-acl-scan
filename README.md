@@ -85,5 +85,7 @@ Once the script performs a complete scan of all of your objects, it will generat
 #### References
 
 https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
+
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html
+
 https://www.slsmk.com/using-python-boto3-with-amazon-aws-s3-buckets/
