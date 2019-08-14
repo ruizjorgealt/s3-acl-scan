@@ -18,6 +18,7 @@ Python script that scans all of your S3 objects for public access. Public object
 - FULL_CONTROL
 
 #### Amazon S3 Predefined Groups
+The script will also provide permissions regarding the following groups.
 
 |Group|URI|Description|
 |-----|---|-----------|
