@@ -16,6 +16,7 @@ Python script that scans all of your S3 objects for public access. Public object
 - WRITE_ACP
 
 Amazon S3 Predefined Groups
+
 |Group|URI|Description|
 |-----|---|-----------|
 |Authenticated Users group|http://acs.amazonaws.com/groups/global/AuthenticatedUsers|This group represents all AWS accounts. Any AWS authenticated user in the world can access your resource.|
