@@ -31,7 +31,7 @@ For more information on the **acs.amazonaws.com/groups/global/AllUsers** access 
 ## How To Use
 In order to properly run this script, ensure that you have setup your AWS programmatic access on your local system.
 
-First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials** by simply editing the profile list to match your profile name.
+First you have to provide the name of your aws profile as configured in **.aws/config** and **.aws/credentials** by simply editing the profile list to match your profile name. To learn more about configuring credentials [click here](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html)
 
 **.aws/config** example:
 ```
@@ -84,4 +84,5 @@ Once the script performs a complete scan of all of your objects, it will generat
 
 #### References
 
+https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html
