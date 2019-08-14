@@ -15,7 +15,7 @@ Python script that scans all of your S3 objects for public access. Public object
 - READ_ACP
 - WRITE_ACP
 
-####Amazon S3 Predefined Groups
+#### Amazon S3 Predefined Groups
 
 |Group|URI|Description|
 |-----|---|-----------|
